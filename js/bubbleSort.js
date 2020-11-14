@@ -14,10 +14,8 @@ function sort(array){
 function bubbleSort(array){
 	// let temp;//暂存数据
 	const {length} = array
-	let num = 0;
 	for(let i=0;i<length-1;i++){//控制循环次数
 		for(let j=0;j<length-i;j++){
-			num++
 			if(array[j]>array[j+1]){//找到最大值放到最后，下次找第二大放次后
 				// temp = array[j]
 				// array[j] = array[j+1]
@@ -26,7 +24,6 @@ function bubbleSort(array){
 			}
 		}
 	}
-	console.log(length,num)
 	return array
 }
 
