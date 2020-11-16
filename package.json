@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "n": "node js/n个骰子的点数.js"
+    "n": "node js/n个骰子的点数.js",
+    "q": "node js/全排列.js",
+    "s": "node js/数组中数字出现的次数.js",
+    "ne": "node js/能否连接形成数组.js",
+    "y": "node js/有效的数独.js",
+    "sh": "node js/数独.js"
   },
   "repository": {
     "type": "git",

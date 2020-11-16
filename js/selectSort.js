@@ -18,11 +18,14 @@ function selectSort(array){
             if(array[j]>array[index]){//寻找最大的数
                 index = j
             }
-            [array[index],array[length-i-1]] = [array[length-i-1],array[index]]//es6
         }
+        [array[index],array[length-i-1]] = [array[length-i-1],array[index]]//es6
     }
     return array
 }
 
 console.log('sort',sort(arr))
 console.log('selectSort',selectSort(arr))
+
+var a={}
+a.hasOwnProperty()
