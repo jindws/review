@@ -9,7 +9,8 @@
     "s": "node js/数组中数字出现的次数.js",
     "ne": "node js/能否连接形成数组.js",
     "y": "node js/有效的数独.js",
-    "sh": "node js/数独.js"
+    "sh": "node js/数独.js",
+    "z": "node js/子集.js"
   },
   "repository": {
     "type": "git",
