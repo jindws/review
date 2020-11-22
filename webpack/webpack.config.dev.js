@@ -25,6 +25,9 @@ module.exports = merge(baseConfig,{
         }),
         new webpack.HotModuleReplacementPlugin(),//webpack自带的HMR插件
     ],
+    resolveLoader: {
+        modules:['node_modules','./loader']
+    },
     module: {
         //loader 很消耗性能
         rules: [
@@ -32,26 +35,33 @@ module.exports = merge(baseConfig,{
                 test:/\.js[x]$/,
                 // exclude: /node_modules/,
                 include:path.resolve(__dirname,'./src'),//只在src生效-推荐
-                use: {
-                    //@babel/core babel核心代码
-                    loader:'babel-loader',//webpack与babel沟通的桥梁
-                    // options: {
-                    //     presets:[[
-                    //         "@babel/preset-env",
-                    //         {
-                    //             // polyfill缺点 污染全局对象 对开源/UI库/组件库 的不友好
-                    //             // useBuiltIns:'entry'//需要import @babel/polyfill,自动按需加载 垫片
-                    //             useBuiltIns:'usage',//推荐 不需要import 自动检测,需要@babel/polyfill
-                    //             // useBuiltIns:'false'//无效,不推荐
-                    //             targets:{
-                    //                 firefox:52,
-                    //                 chrome:35,
-                    //             },
-                    //             corejs:2,//新版本需要制定核心库版本
-                    //         }
-                    //     ],'@babel/preset-react']//语法转换插件
-                    // }
-                }
+                use: [{
+                        //@babel/core babel核心代码
+                        loader:'babel-loader',//webpack与babel沟通的桥梁
+                        // options: {
+                        //     presets:[[
+                        //         "@babel/preset-env",
+                        //         {
+                        //             // polyfill缺点 污染全局对象 对开源/UI库/组件库 的不友好
+                        //             // useBuiltIns:'entry'//需要import @babel/polyfill,自动按需加载 垫片
+                        //             useBuiltIns:'usage',//推荐 不需要import 自动检测,需要@babel/polyfill
+                        //             // useBuiltIns:'false'//无效,不推荐
+                        //             targets:{
+                        //                 firefox:52,
+                        //                 chrome:35,
+                        //             },
+                        //             corejs:2,//新版本需要制定核心库版本
+                        //         }
+                        //     ],'@babel/preset-react']//语法转换插件
+                        // }
+                    }, {
+                        loader:'testloader',
+                        options:{
+                                name:'test'
+                        }
+                    }
+
+                ]
             },
             {
                 test: /\.less$/,
@@ -60,7 +70,9 @@ module.exports = merge(baseConfig,{
                 //less-loader less->css
                 //css-loader -> css in js
                 //style-loader 从js提取css,生成style标签->html
-                use: ['style-loader', 'css-loader', 'less-loader']
+
+                // use: ['style-loader', 'css-loader', 'less-loader']
+                use: ['styleLoader', 'lessLoader']
             },
             {
                 test: /\.scss$/,
