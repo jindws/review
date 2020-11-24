@@ -26,6 +26,3 @@ function selectSort(array){
 
 console.log('sort',sort(arr))
 console.log('selectSort',selectSort(arr))
-
-var a={}
-a.hasOwnProperty()
