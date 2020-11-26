@@ -4,6 +4,7 @@ const webpack = require('webpack')
 
 const baseConfig = require('./webpack.config.base')
 const {merge} = require('webpack-merge')
+const Test = require('./plugin/test')
 module.exports = merge(baseConfig,{
     mode: 'development',//'production,none
     output: {
@@ -17,6 +18,9 @@ module.exports = merge(baseConfig,{
         // publicPath: ""
     },
     plugins: [
+        new Test({
+            test:true
+        }),
         new HtmlWebpackPlugin({
             title: 'title',//ejs语法  <title><%=htmlWebpackPlugin.options.title%></title>
             template: './index.html',
