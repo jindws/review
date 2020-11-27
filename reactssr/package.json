@@ -1,0 +1,32 @@
+{
+    "name": "reactssr",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "corrently": "concurrently \"npm run server:build\" \"npm run client:build\" \"npm run start\"",
+        "server:build": "webpack --config webpack.server.js --watch",
+        "client:build": "webpack --config webpack.client.js --watch",
+        "start": "nodemon ./dist/bundle.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/core": "^7.12.9",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/preset-react": "^7.12.7",
+        "babel-loader": "^8.2.2",
+        "concurrently": "^5.3.0",
+        "express": "^4.17.1",
+        "react": "17.0.1",
+        "react-dom": "^17.0.1",
+        "webpack": "^5.8.0",
+        "webpack-cli": "^4.2.0",
+        "webpack-node-externals": "^2.5.2"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.0",
+        "@types/react-dom": "^17.0.0"
+    }
+}
