@@ -1,12 +1,11 @@
 import * as React from 'react'
+import {Route} from 'react-router-dom'
+import Index from "./pages";
+import About from "./pages/about";
 
-
-function App({title}){
-	return <div>
-		hello {title}
-		<br/>
-		<a onClick={()=>console.log(33)}>button</a>
-	</div>
-}
-
-export default <App title='ssr'/>
+export default (
+	<>
+		<Route path='/' exact component={Index}/>
+		<Route path='/about' exact component={About}/>
+	</>
+)
