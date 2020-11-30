@@ -25,4 +25,4 @@ console.log(5);
 //执行micro队列|console.log(4)
 //执行macro队列|console.log(1)
 
-// 结果:23451
+// 结果:23541
