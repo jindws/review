@@ -1,25 +1,19 @@
 //红300ms---黄200ms---绿100ms
 
-let light = ''
- function execute(){
-    // let colorArr = ['red','yellow','green']
-    fun()
+let light = "";
+
+function execute(i = 0) {
+  let colorArr = ["red", "yellow", "green"];
+  const time = {
+    red: 3000,
+    yellow: 2000,
+    green: 1000,
+  };
+  light = colorArr[i];
+  console.log(light);
+  setTimeout(() => {
+    execute((i + 1) % 3);
+  }, time[colorArr[i]]);
 }
 
-
-function fun(i=0){
-    let colorArr = ['red','yellow','green']
-    const time = {
-        red:300,
-        yellow:200,
-        green:100,
-    }
-    light = colorArr[i]
-    console.log(light)
-    setTimeout(()=>{
-        fun((i+1)%3)
-    },time[colorArr[i]])
-}
-
-
-execute()
+execute();

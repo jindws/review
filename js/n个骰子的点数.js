@@ -6,7 +6,7 @@
  * @param n
  * @returns {unknown[]|*[]}
  */
-var dicesProbability = function(n) {
+const dicesProbability = function (n) {
     if (n < 1) {
         return [];
     }
@@ -18,7 +18,10 @@ var dicesProbability = function(n) {
                 .reduce((acc, cur) => acc + cur, 0);
         }
     }
-    return res.slice(1).map(num => num / 6 **n).filter(Boolean);
+    return res
+        .slice(1)
+        .map((num) => num / 6 ** n)
+        .filter(Boolean);
 };
 
-console.log(dicesProbability(2))
+console.log(dicesProbability(2));

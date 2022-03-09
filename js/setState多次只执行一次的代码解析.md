@@ -1,6 +1,5 @@
-- 在React的生命周期和合成事件执行前后都有相应的钩子，分别是pre钩子和post钩子
-- pre钩子会调用batchedUpdate方法将isBatchingUpdates变量置为true开启批量更新
-- post钩子会将isBatchingUpdates置为false
-- isBatchingUpdates变量置为true，则会走批量更新分支，setState的更新会被存入队列中，待同步代码执行完后，再执行队列中的state更新
-- 而在原生事件和异步操作中，不会执行pre钩子，或者生命周期的中的异步操作之前执行了pre钩子，但是pos钩子也在异步操作之前执行完了，isBatchingUpdates必定为false，也就不会进行批量更新。
-
+- 在 React 的生命周期和合成事件执行前后都有相应的钩子，分别是 pre 钩子和 post 钩子
+- pre 钩子会调用 batchedUpdate 方法将 isBatchingUpdates 变量置为 true 开启批量更新
+- post 钩子会将 isBatchingUpdates 置为 false
+- isBatchingUpdates 变量置为 true，则会走批量更新分支，setState 的更新会被存入队列中，待同步代码执行完后，再执行队列中的 state 更新
+- 而在原生事件和异步操作中，不会执行 pre 钩子，或者生命周期的中的异步操作之前执行了 pre 钩子，但是 pos 钩子也在异步操作之前执行完了，isBatchingUpdates 必定为 false，也就不会进行批量更新。
