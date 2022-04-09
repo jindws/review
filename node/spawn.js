@@ -1,5 +1,9 @@
-const {spawn,exec} = require('child_process');
-// const ls = spawn('find', ['.', '-type', 'f']);
+const {spawn} = require('child_process');
+const child = spawn('wc');
+process.stdin.pipe(child.stdin);
+child.stdout.on('data', (data) => {
+    console.log(`child stdout:\n${data}`);
+});// const ls = spawn('find', ['.', '-type', 'f']);
 // const ls = spawn('find . -type f', {
 //     stdio: 'inherit',
 //     shell: true
@@ -35,9 +39,9 @@ const {spawn,exec} = require('child_process');
 //     console.log('exec',out)
 // });
 
-
-const child = spawn('node', ['exec.js'], {
-    detached: true,
-    stdio: 'ignore'
-});
-child.unref();
+//
+// const child = spawn('node', ['exec.js'], {
+//     detached: true,
+//     stdio: 'ignore'
+// });
+// child.unref();
