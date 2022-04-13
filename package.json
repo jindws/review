@@ -26,5 +26,8 @@
   "homepage": "https://github.com/moiamoia/review#readme",
   "devDependencies": {
     "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
