@@ -1,0 +1,7 @@
+.box::after{
+    content:'';
+    background:red;
+    height:100px;
+    position:absolute;
+   transform: rotate(45deg);
+}
